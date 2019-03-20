@@ -4,7 +4,8 @@ language: c
 addons:
   sonarcloud:
     organization: "s4paneum-organization"
-token: $SONAR_TOKEN2
+token:
+  secure: "4d274ca64e9f9c62567989cb460c751b8c0ad464"
 
 
 script:
@@ -13,5 +14,5 @@ script:
   -Dsonar.organization=s4paneum-github
   -Dsonar.sources=.
   -Dsonar.cfamily.build-wrapper-output=bw-output
-  -Dsonar.host.url=https://sonarcloud.io 
+  -Dsonar.host.url=https://sonarcloud.io
   -Dsonar.login=4d274ca64e9f9c62567989cb460c751b8c0ad464
