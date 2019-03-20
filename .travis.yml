@@ -1,18 +1,11 @@
-sudo: false
 language: c
 
 addons:
   sonarcloud:
     organization: "s4paneum-organization"
-token:
-  secure: "4d274ca64e9f9c62567989cb460c751b8c0ad464"
+    token:
+      secure: "c0e7491f4e49b055723b6111b321b3c958997636"
 
 
 script:
-  sonar-scanner
-  -Dsonar.projectKey=s4paneum_wrk
-  -Dsonar.organization=s4paneum-github
-  -Dsonar.sources=.
-  -Dsonar.cfamily.build-wrapper-output=bw-output
-  -Dsonar.host.url=https://sonarcloud.io
-  -Dsonar.login=4d274ca64e9f9c62567989cb460c751b8c0ad464
+- sonar-scanner
