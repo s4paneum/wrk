@@ -8,15 +8,13 @@ token: $SONAR_TOKEN2
 
 
 script:
-- make clean
-# Wraps the compilation with the Build Wrapper to generate configuration (used
-# later by the SonarQube Scanner) into the "bw-output" folder
--build-wrapper-win-x86-64.exe --out-dir bw-output make clean all
-# Execute some tests
-- make test
-# And finally run the SonarQube analysis - read the "sonar-project.properties"
-# file to see the specific configuration
-- sonar-scanner
+  sonar-scanner.bat
+  -D"sonar.projectKey=s4paneum_wrk"
+  -D"sonar.organization=s4paneum-github"
+  -D"sonar.sources=."
+  -D"sonar.cfamily.build-wrapper-output=bw-output"
+  -D"sonar.host.url=https://sonarcloud.io"
+  -D"sonar.login=4d274ca64e9f9c62567989cb460c751b8c0ad464"
 
 matrix:
   include:
