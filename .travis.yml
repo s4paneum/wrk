@@ -8,10 +8,10 @@ token: $SONAR_TOKEN2
 
 
 script:
-  sonar-scanner.bat
-  -D"sonar.projectKey=s4paneum_wrk"
-  -D"sonar.organization=s4paneum-github"
-  -D"sonar.sources=."
-  -D"sonar.cfamily.build-wrapper-output=bw-output"
-  -D"sonar.host.url=https://sonarcloud.io"
-  -D"sonar.login=4d274ca64e9f9c62567989cb460c751b8c0ad464"
+  sonar-scanner
+  -Dsonar.projectKey=s4paneum_wrk
+  -Dsonar.organization=s4paneum-github
+  -Dsonar.sources=.
+  -Dsonar.cfamily.build-wrapper-output=bw-output
+  -Dsonar.host.url=https://sonarcloud.io 
+  -Dsonar.login=4d274ca64e9f9c62567989cb460c751b8c0ad464
