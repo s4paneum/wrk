@@ -1,11 +1,15 @@
-language: c
+dist: trusty
+sudo: false
 
 addons:
   sonarcloud:
-    organization: "s4paneum-organization"
+    organization: "sonarcloud"
     token:
       secure: "c0e7491f4e49b055723b6111b321b3c958997636"
-
-
 script:
-- sonar-scanner -X
+-build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+- sonar-scanner
+
+cache:
+  directories:
+  - '$HOME/.sonar/cache'
