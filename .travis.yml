@@ -7,9 +7,12 @@ addons:
     token:
       secure: "c0e7491f4e49b055723b6111b321b3c958997636"
 script:
--build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+- build-wrapper-linux-x86-64 --out-dir bw-output make clean all
 - sonar-scanner
+  -Dsonar.projectKey=s4paneum_wrk
+  -Dsonar.organization=s4paneum-github
+  -Dsonar.sources=.
+  -Dsonar.cfamily.build-wrapper-output=bw-output
+  -Dsonar.host.url=https://sonarcloud.io
+  -Dsonar.login=c0e7491f4e49b055723b6111b321b3c958997636
 
-cache:
-  directories:
-  - '$HOME/.sonar/cache'
