@@ -4,7 +4,7 @@ sudo: false
 addons:
   sonarcloud:
     organization: "s4paneum-organization"
-token: $SONAR_TOKEN3
+token: $SONAR_TOKEN2
 
 
 script:
